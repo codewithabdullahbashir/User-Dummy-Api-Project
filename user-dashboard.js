@@ -9,14 +9,19 @@ async function getUsers() {
 
   for (const userData of users) {
     html += `
-      <h2>${userData.name}</h2>
-      <p class="username">${userData.username}</p>
-      <p class="email">${userData.email}</p>
-      <p class="phone">${userData.phone}</p>
-    `;
-    }
+        <div class="user-card">
+          <h2>${userData.name}</h2>
+          <p class="username">@${userData.username}</p>
+          <p class="email">${userData.email}</p>
+          <p class="phone">${userData.phone}</p>
+          <button type="button" onclick="">
+            View Profile
+          </button>
+        </div>
+      `;
+  }
 
-    container.innerHTML = html;
+  container.innerHTML = html;
 }
 
 getUsers();
