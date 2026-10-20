@@ -4,7 +4,6 @@ const container = document.getElementById("container");
 async function getUsers() {
   const response = await fetch(API.users);
   const users = await response.json();
-
   let html = "";
 
   for (const userData of users) {
@@ -14,9 +13,9 @@ async function getUsers() {
           <p class="username">@${userData.username}</p>
           <p class="email">${userData.email}</p>
           <p class="phone">${userData.phone}</p>
-          <button type="button" onclick="">
-            View Profile
-          </button>
+          <a class="user-link" href="user-profile.html?userId=${userData.id}">
+                    <button type="button">View Profile</button>
+          </a>
         </div>
       `;
   }
